@@ -1,0 +1,722 @@
+@font-face {
+  font-family: "DMSans";
+  src: url(/assets/fonts/DMSans-VariableFont_opsz,wght.ttf) format("truetype");
+  font-style: normal;
+  font-weight: 400 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "DMSans Italic";
+  src: url(/assets/fonts/DMSans-Italic-VariableFont_opsz,wght.ttf)
+    format("truetype");
+  font-style: italic;
+  font-weight: 400 500;
+  font-display: swap;
+}
+
+/* RESET */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* VARIABLES */
+
+:root {
+  font-size: 62.5%;
+  --color-light-purple: hsl(254, 88%, 90%);
+  --color-dark-purple: hsl(256, 67%, 59%);
+  --color-light-yellow: hsl(31, 66%, 93%);
+  --color-dark-yellow: hsl(39, 100%, 71%);
+  --color-white: hsl(0, 0%, 100%);
+  --color-black: hsl(0, 0%, 7%);
+  --fs-xs: 1.4rem;
+  --fs-sm: 1.6rem;
+  --fs-base: 1.8rem;
+  --fs-md: 2rem;
+  --fs-lg: 2.4rem;
+  --fs-xl: 3.2rem;
+  --fs-xxl: 4.8rem;
+  --fm-main: "DMSans", sans-serif;
+  --fm-italic: "DMSans Italic", sans-serif;
+  --fw-medium: 400;
+  --fw-bold: 500;
+}
+
+/* CODE */
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body {
+  background-color: hsl(0, 0%, 95%);
+  font-family: var(--fm-main);
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas:
+    "create social social schedule"
+    "create manage maintain schedule"
+    "write manage maintain schedule"
+    "write growth grow grow";
+  gap: 3.5rem;
+}
+
+section {
+  border-radius: 10px;
+}
+
+.write,
+.maintain {
+  background-color: var(--color-dark-yellow);
+}
+
+.social,
+.grow {
+  background-color: var(--color-dark-purple);
+}
+
+.manage,
+.growth {
+  background-color: var(--color-white);
+}
+
+.create {
+  background-color: var(--color-light-yellow);
+  grid-area: create;
+}
+
+.grow {
+  grid-area: grow;
+}
+
+.social {
+  grid-area: social;
+  padding: 7.5rem;
+}
+
+.social-inner {
+  max-width: 550px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.social img {
+  width: 40%;
+  margin-bottom: 0.8rem;
+}
+
+.schedule {
+  background-color: var(--color-light-purple);
+  grid-area: schedule;
+}
+
+.maintain {
+  grid-area: maintain;
+}
+
+.write {
+  grid-area: write;
+}
+
+.growth {
+  grid-area: growth;
+  padding: 3rem;
+  display: flex;
+}
+
+.growth-inner {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: space-between;
+}
+
+.growth-inner p {
+  font-size: var(--fs-md);
+  margin-top: -3rem;
+}
+
+.growth-inner img {
+  width: 80%;
+}
+
+.percentage {
+  font-size: 7.5rem;
+  font-weight: var(--fw-bold);
+  line-height: 1;
+}
+
+.manage {
+  grid-area: manage;
+}
+
+.hero-title {
+  font-family: var(--fm-main);
+  font-size: 7.5rem;
+  line-height: 1;
+  text-align: center;
+  margin-bottom: 3rem;
+  font-weight: var(--fw-bold);
+  color: var(--color-white);
+}
+
+h1 .number {
+  color: var(--color-dark-yellow);
+}
+
+h1 .italic {
+  font-style: italic;
+}
+
+.social p {
+  font-size: var(--fs-md);
+  color: var(--color-white);
+  font-weight: var(--fw-medium);
+  opacity: 0.9;
+}
+
+h3 {
+  font-size: 4.5rem;
+  font-weight: var(--fw-bold);
+  line-height: 0.9;
+}
+
+.create {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.create-inner {
+  max-width: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+}
+
+.create-inner span {
+  font-style: italic;
+  color: var(--color-dark-purple);
+}
+
+.grow-inner {
+  display: flex;
+  padding: 2.5rem;
+  gap: 2rem;
+}
+
+.grow img {
+  width: 45.5%;
+}
+
+.write-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
+  padding: 2.5rem;
+}
+
+.write h3 {
+  max-width: 75%;
+}
+
+h2 {
+  font-size: 4.5rem;
+  font-weight: var(--fw-bold);
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  color: var(--color-white);
+}
+
+h4 {
+  font-size: 3.8rem;
+  line-height: 0.9;
+  font-weight: var(--fw-bold);
+}
+
+.manage-inner {
+  padding: 2.5rem;
+  overflow: hidden;
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.manage-inner h4 {
+  max-width: 82%;
+}
+
+.maintain-inner {
+  overflow: hidden;
+  position: relative;
+  padding: 2.7rem;
+  height: 100%;
+}
+
+.manage-img {
+  position: absolute;
+  top: 21px;
+  left: 34px;
+  width: 122%;
+  max-width: none;
+  height: auto;
+}
+
+.maintain img {
+  position: absolute;
+  width: 83%;
+  bottom: -10rem;
+}
+
+.schedule-inner {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+  padding: 5.4rem 5rem;
+}
+.schedule img {
+  position: absolute;
+  top: 158px;
+  left: 45px;
+  width: 138%;
+  max-width: none;
+}
+
+.schedule p {
+  line-height: 1;
+  font-size: var(--fs-md);
+}
+
+/* MEDIA QUERIES MOBILE 425px MAX*/
+
+@media (max-width: 425px) {
+  body,
+  html {
+    height: auto;
+  }
+  .container {
+    max-width: 425px;
+    margin: 0 auto;
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "social"
+      "manage"
+      "maintain"
+      "schedule"
+      "grow"
+      "growth"
+      "create"
+      "write";
+    gap: 3.5rem;
+  }
+  .social {
+    padding: 4.5rem 1.5rem;
+  }
+
+  .hero-title {
+    font-size: 5.05rem;
+  }
+  .social img {
+    width: 60%;
+  }
+
+  .manage-img {
+    position: static;
+    width: 100%;
+    max-width: none;
+  }
+  .manage-inner h4 {
+    max-width: 100%;
+  }
+
+  h4 {
+    font-size: 2.65rem;
+    word-spacing: -2px;
+  }
+
+  .manage-inner {
+    gap: 2.1rem;
+  }
+
+  .maintain-inner h4 {
+    position: relative;
+    top: 1.2rem;
+  }
+
+  .maintain img {
+    position: relative;
+    width: 68%;
+    bottom: -3.75rem;
+  }
+
+  .maintain-inner {
+    padding: 0.3rem 2.7rem;
+  }
+
+  .schedule img {
+    position: static;
+    max-width: 100%;
+  }
+
+  .schedule-inner {
+    align-items: center;
+    padding: 3.25rem 2rem;
+    gap: 2.35rem;
+  }
+
+  .schedule-inner h4 {
+    font-size: 2.4rem;
+    font-weight: var(--fw-bold);
+  }
+
+  .schedule p {
+    text-align: center;
+  }
+
+  .grow-inner {
+    flex-direction: column;
+    align-items: center;
+    gap: 4rem;
+  }
+  .grow img {
+    width: 75.5%;
+  }
+  h2 {
+    text-align: center;
+    font-size: 3.5rem;
+  }
+
+  .growth-inner img {
+    width: 61%;
+  }
+
+  .growth-inner {
+    gap: 2rem;
+  }
+
+  .percentage {
+    font-size: 5.2rem;
+    margin-bottom: 2rem;
+  }
+
+  .create-inner {
+    max-width: none;
+    align-items: flex-start;
+    padding: 3.26rem;
+  }
+
+  .create-inner img {
+    width: 60%;
+  }
+
+  h3 {
+    font-size: 3.2rem;
+  }
+
+  .write-inner {
+    gap: 2.6rem;
+    padding: 3.26rem;
+  }
+
+  .write-inner img {
+    width: 70%;
+  }
+
+  .write h3 {
+    max-width: 100%;
+  }
+}
+
+/* MEDIA QUERIES MOBILE 430px iPhone*/
+@media (max-width: 430px) {
+  body,
+  html {
+    height: auto;
+  }
+  .container {
+    max-width: 430px;
+    margin: 0 auto;
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "social"
+      "manage"
+      "maintain"
+      "schedule"
+      "grow"
+      "growth"
+      "create"
+      "write";
+    gap: 3.5rem;
+  }
+  .social {
+    padding: 4.5rem 1.5rem;
+  }
+
+  .hero-title {
+    font-size: 5.2rem;
+  }
+  .social img {
+    width: 60%;
+  }
+
+  .manage-img {
+    position: static;
+    width: 100%;
+    max-width: none;
+  }
+  .manage-inner h4 {
+    max-width: 100%;
+  }
+
+  h4 {
+    font-size: 2.65rem;
+    word-spacing: -2px;
+  }
+
+  .manage-inner {
+    gap: 2.1rem;
+  }
+
+  .maintain-inner {
+    padding: 0.3rem 2.7rem;
+  }
+
+  .maintain-inner h4 {
+    position: relative;
+    top: 20px;
+  }
+
+  .maintain img {
+    position: relative;
+    width: 68%;
+    bottom: -3.75rem;
+  }
+
+  .schedule img {
+    position: static;
+    max-width: 100%;
+  }
+
+  .schedule-inner {
+    align-items: center;
+    padding: 3.25rem 2rem;
+    gap: 2.35rem;
+  }
+
+  .schedule-inner h4 {
+    font-size: 2.4rem;
+    font-weight: var(--fw-bold);
+  }
+
+  .schedule p {
+    text-align: center;
+  }
+
+  .grow-inner {
+    flex-direction: column;
+    align-items: center;
+    gap: 4rem;
+  }
+  .grow img {
+    width: 75.5%;
+  }
+  h2 {
+    text-align: center;
+    font-size: 3.5rem;
+  }
+
+  .growth-inner img {
+    width: 61%;
+  }
+
+  .growth-inner {
+    gap: 2rem;
+  }
+
+  .percentage {
+    font-size: 5.2rem;
+    margin-bottom: 2rem;
+  }
+
+  .create-inner {
+    max-width: none;
+    align-items: flex-start;
+    padding: 3.26rem;
+  }
+
+  .create-inner img {
+    width: 60%;
+  }
+
+  h3 {
+    font-size: 3.2rem;
+  }
+
+  .write-inner {
+    gap: 2.6rem;
+    padding: 3.26rem;
+  }
+
+  .write-inner img {
+    width: 70%;
+  }
+
+  .write h3 {
+    max-width: 100%;
+  }
+}
+
+/* MEDIA QUERIES MOBILE 375px MAX*/
+
+@media (max-width: 375px) {
+  .container {
+    gap: 3.15rem;
+  }
+  .hero-title {
+    font-size: 4.5rem;
+    margin-bottom: 2.2rem;
+  }
+
+  .social p {
+    font-size: 1.8rem;
+  }
+
+  h4 {
+    font-size: 2.5rem;
+    word-spacing: -2px;
+  }
+
+  .maintain-inner h4 {
+    position: relative;
+    top: 8px;
+  }
+
+  .maintain-inner {
+    padding: 1rem 2rem;
+  }
+
+  .maintain img {
+    bottom: -2.7rem;
+  }
+
+  .manage-inner {
+    padding: 1.3rem 2rem;
+  }
+
+  .schedule-inner h4 {
+    font-size: 2.2rem;
+  }
+
+  .schedule p {
+    font-size: 1.7rem;
+  }
+
+  h2 {
+    font-size: 3rem;
+  }
+
+  .growth {
+    padding: 2rem;
+  }
+
+  .percentage {
+    font-size: 4.7rem;
+  }
+
+  .growth-inner p {
+    font-size: 1.87rem;
+  }
+
+  h3 {
+    font-size: 2.8rem;
+  }
+
+  .create-inner {
+    padding: 2.9rem 3.26rem;
+  }
+
+  .create-inner img {
+    width: 70%;
+  }
+
+  .write-inner {
+    padding: 2.25rem 2rem;
+  }
+}
